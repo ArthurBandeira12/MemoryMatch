@@ -1,0 +1,85 @@
+#logo-container{
+    margin: 2rem 0rem 0rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#logo span {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: #FFFFFF;
+}
+
+#logo img {
+    width: 30px; 
+    height: auto;
+}
+
+
+#team-section {
+    text-align: center;
+    margin: 2rem 0rem 0rem 0rem;
+}
+
+#team-section h2 {
+    font-size: 2.5rem;
+}
+
+#team-section p {
+    font-size: 1rem;
+    line-height: 1.5;
+    width: 70%;
+    margin: 0 auto;
+    color: #CFCFCF; 
+}
+
+
+#cards-container-about {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 3rem 0rem 0rem 0rem;
+}
+
+.card-about {
+    background: #FFFFFF;
+    width: 300px;
+    height: 400px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.card-image-about {
+    background: #D3D3D3; 
+    height: 200px; 
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+}
+
+.card-image-about img {
+    width: auto; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+
+.card-content-about {
+    padding: 10px;
+    text-align: center;
+}
+
+.card-content-about h3 {
+    
+    font-size: 1.2rem;
+    color: #0C0C0C; 
+}
+
+.card-content-about p {
+    font-size: 0.9rem;
+    color: #3F3F3F; 
+}
