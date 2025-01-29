@@ -40,7 +40,7 @@
         </div>
         <div class="card-about">
             <div class="card-image-about">
-                <img src="./diego.jpg" alt="Diego" />
+                <img src="./Diego.jpg" alt="Diego" />
             </div>
             <div class="card-content-about">
                 <h3>José Diego</h3>

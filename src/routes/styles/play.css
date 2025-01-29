@@ -17,7 +17,7 @@
 }
 
 main {
-    background-color: #0D0D0D;
+   
     min-height: 100vh;
     position: relative; 
     display: flex;
@@ -130,7 +130,7 @@ main {
 }
 .memory-card .back {
     transform: rotateY(0);
-    background-image: url('background.jpg');
+    background-image: url('background2.png');
     background-size: cover;
 }
 

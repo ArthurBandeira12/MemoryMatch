@@ -1,4 +1,4 @@
-<script lang="ts">
+ <script lang="ts">
     import { onMount } from "svelte";
 
     type Theme = "default" | "lol" | "superheroes" | "anime";
@@ -42,16 +42,16 @@
             "thor.jpg",
         ],
         anime: [
-            "anime1.jpg",
-            "anime2.jpg",
-            "anime3.jpg",
-            "anime4.jpg",
-            "anime5.jpg",
-            "anime5.jpg",
-            "anime5.jpg",
-            "anime5.jpg",
-            "anime5.jpg",
-            "anime5.jpg",
+            "Anime1.jpg",
+            "Anime2.jpg",
+            "Anime3.jpg",
+            "Anime4.jpg",
+            "Anime5.jpg",
+            "Anime6.jpg",
+            "Anime7.jpg",
+            "Anime8.jpg",
+            "Anime10.jpg",
+            "Anime11.jpg",
         ],
     };
 
@@ -234,9 +234,9 @@
 
                 <div id="select-itens2">
                     <span>Time: <span class="timer">{timer}</span></span>
-                </div>
+              </div>
             </div>
-            <div id="cards-container">
+              <div id="cards-container">
                 {#each cards as card}
                     <button
                         class="memory-card"
