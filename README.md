@@ -1,18 +1,11 @@
-# sv
+# Memory Match 
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+**Memory** Match is a memory game developed by students at IFPE - Campus Igarassu for Professor Allan Diego's Programming Logic course.
 
-## Creating a project
+## Developers
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
+- Arthur Bandeira
+- José Diego
 
 ## Developing
 

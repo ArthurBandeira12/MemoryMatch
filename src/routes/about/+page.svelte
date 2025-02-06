@@ -19,33 +19,41 @@
         >
     </div>
 
-    <section id="team-section">
-        <h2>Our Team</h2>
-        <p>
-            This project was developed for the Imperative Programming course
-            taught by Professor Allan Diego, with the goal of putting into
-            practice the content covered in class.
-        </p>
-    </section>
-
-    <section id="cards-container-about">
-        <div class="card-about">
-            <div class="card-image-about">
-                <img src="./arthur.png" alt="imagemarthur" />
+    <main id="about-container">
+        <section id="team-section">
+            <h2>Our Team</h2>
+            <p>
+                This project was developed for the Imperative Programming course
+                taught by Professor Allan Diego, with the goal of putting into
+                practice the content covered in class.
+            </p>
+        </section>
+    
+        <section id="cards-container-about">
+            <div class="card-about">
+                <img
+                    src="./arthur.png"
+                    alt="imagemarthur"
+                    class="card-image-about"
+                />
+                <div class="card-content-about">
+                    <h3>Arthur Bandeira</h3>
+                    <p>
+                        Currently enrolled in the first semester of Internet Systems
+                        Technology (TSI), 22 years old.
+                    </p>
+                </div>
             </div>
-            <div class="card-content-about">
-                <h3>Arthur Bandeira</h3>
-                <p>Currently enrolled in the first semester of Internet Systems Technology (TSI), 22 years old.</p>
+            <div class="card-about">
+                <img src="./diego.jpg" alt="José Diego" class="card-image-about" />
+                <div class="card-content-about">
+                    <h3>José Diego</h3>
+                    <p>
+                        Currently enrolled in the first semester of Internet Systems
+                        Technology (TSI), 25 years old.
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="card-about">
-            <div class="card-image-about">
-                <img src="./Diego.jpg" alt="Diego" />
-            </div>
-            <div class="card-content-about">
-                <h3>José Diego</h3>
-                <p>Currently enrolled in the first semester of Internet Systems Technology (TSI), ?? years old.</p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 </div>

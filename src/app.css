@@ -8,8 +8,12 @@
     color: #FFFFFF;
 }
 
+
 body {
-    background-image: url('/Background.jpg');
+    background-image: url(./lib/images/testeb5.0.png) ;
+    background-size: cover;
+    background-position: center center;
+
 }
 
 
@@ -18,7 +22,8 @@ body {
     justify-content:left;
     align-items: center;
     text-align: center;
-    margin: 4rem 0rem 3rem 2rem;
+    padding: 20px;
+    margin: 2rem 0rem 2rem 2rem;
 }
 
 #icon-back-button {
