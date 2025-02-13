@@ -50,7 +50,7 @@
                     <h3>José Diego</h3>
                     <p>
                         Currently enrolled in the first semester of Internet Systems
-                        Technology (TSI), 25 years old.
+                        Technology (TSI), 30 years old.
                     </p>
                 </div>
             </div>

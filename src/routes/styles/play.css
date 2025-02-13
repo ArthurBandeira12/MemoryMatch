@@ -32,6 +32,7 @@
     justify-content: center;
     flex-direction: row;
     gap: 50px;
+    
 
 }
 
@@ -165,3 +166,5 @@
         width: 12rem; 
     }
 }
+
+
