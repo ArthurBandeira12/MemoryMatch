@@ -26,6 +26,16 @@
                 This project was developed for the Imperative Programming course
                 taught by Professor Allan Diego, with the goal of putting into
                 practice the content covered in class.
+                <br>
+                <br> In the development of our programming project, we use Artificial Intelligence as an essential tool to optimize our work, assisting us in identifying and fixing errors, and making debugging more efficient.
+
+
+
+
+
+
+
+
             </p>
         </section>
     

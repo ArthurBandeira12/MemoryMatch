@@ -12,7 +12,7 @@
 
 
 body {
-    background-image: url(./lib/images/testeb5.0.png) ;
+    background-image: url(./lib/images/teste6.png) ;
     background-size: cover;
     background-position: center center;
     
@@ -27,6 +27,7 @@ body {
     text-align: center;
     padding: 20px;
     margin: 2rem 0rem 2rem 2rem;
+    
 }
 
 #icon-back-button {
