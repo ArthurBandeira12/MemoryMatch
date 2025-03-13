@@ -221,7 +221,7 @@ const restartGame = (): void => {
 
     
 </script>
-git stash
+
 {#if gameOver}
   <div id="game-over-modal">
       <div class="modal-content">
