@@ -1,11 +1,12 @@
  <script lang="ts">
     import { onMount } from "svelte";
-   // tema e o audio
+   
+    // 🎵 Configuração do Tema e Áudio
     type Theme = "default" | "lol" | "superheroes" | "anime";
     let selectedTheme: Theme = "default";
     let audio: HTMLAudioElement | null = null;
     
-// os audios de cada tema
+    // 🎵 Arquivos de Áudio para Cada Tema
     const audioFiles: Record<string, string> = {
     default: "/soundtrack default.mp3",
     lol: "/soundtrack lol.mp3",
@@ -13,7 +14,7 @@
     anime: "/soundtrack anime.mp3",
   };
   
-  // tocar a musica dependendo do tema
+  // ▶️ Função para Tocar o Áudio do Tema Selecionado
   const playAudio = (theme: string) => {
     if (audio) {
       audio.pause(); 
@@ -21,11 +22,11 @@
     }
 
     // verifica o tema 
-    audio = new Audio(audioFiles[theme]);
-    audio.loop = true; // deixa a musica em loop eterno
+    audio = new Audio(audioFiles[theme]); //  *2521154
+    audio.loop = true; // deixa a musica em loop 
     audio.play(); // inicia a musica 
   };
-  // pausa o a musica
+  // ⏸️ Função para Pausar o Áudio
   const pauseAudio = () => {
     if (audio) {
       audio.pause(); 
@@ -34,7 +35,7 @@
 
 
 
-
+  //  Temas Disponíveis e suas Imagens
     const themes: Record<Theme, string[]> = {
         default: [
             "angryperson.jpg",
@@ -86,6 +87,7 @@
         ],
     };
 
+    // 🃏 Interface para Representar Cada Carta do Jogo
     interface Card {
         id: number;
         character: string;
@@ -94,16 +96,18 @@
         disabled: boolean;
         matched: boolean;
     }
-   // declarando as variaveis
+   
+    // 🗂️ Variáveis do Jogo
     let cards: Card[] = [];
     let firstCard: Card | null = null;
     let secondCard: Card | null = null;
     let timer: number = 0;
     let interval: ReturnType<typeof setInterval>;
-   // deixar o array aleatorio 
+    
+    //🔀 Função para Embaralhar o Array de Cartas
     const shuffleArray = (array: any[]): any[] =>
         array.sort(() => Math.random() - 0.5);
-
+    // 🎮 Função para Carregar o Jogo    
     const loadGame = (): void => {
         const duplicatedCharacters = [
             ...themes[selectedTheme],
@@ -125,20 +129,21 @@
         clearInterval(interval);
         startTimer();
     };
- // inicia o tempo
+ 
+    // ⏱️ Função para Iniciar o Timer
     const startTimer = (): void => {
         clearInterval(interval);
         interval = setInterval(() => {
             timer++;
         }, 1000);
     };
-    // converter o tempo em segundos para minuto 0:00
+    // ⌛ Função para Formatador de Tempo (mm:ss)
     const formatTime = (seconds: number): string => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
     return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
 };
-   // verifica as cartas viradas e desabilita elas caso estejam erradas
+   //  Lógica do Jogo (Virar e Comparar Cartas)
     const handleClick = (card: Card): void => {
         if (card.revealed || card.disabled || (firstCard && secondCard)) return;
 
@@ -155,7 +160,7 @@
             checkCards();
         }
     };
- // Verifica se a carta deu match com a outra
+   // Função para Verificar se as Cartas Combinam
     const checkCards = (): void => {
         if (firstCard && secondCard) {
             if (firstCard.character === secondCard.character) {
@@ -183,45 +188,32 @@
         }
     };
      // Verificar se o jogo acabou
-    const checkGameOver = (): void => {
-        const totalMatched = cards.filter((card) => card.matched).length;
-        const totalCards = cards.length;
+     let gameOver = false;
+let finalTime = "";
 
-        if (totalMatched === totalCards) {
-            clearInterval(interval);
-            let playAgain;
-            do {
-                playAgain = prompt(
-                    `Congratulations! You finished the game in ${formatTime(timer)}. Would you like to play again? (Type "yes" to continue or "no" to quit)`
-                );
+// 🏆 Verificar se o jogo acabou e exibir mensagem animada
+const checkGameOver = (): void => {
+    const totalMatched = cards.filter((card) => card.matched).length;
+    const totalCards = cards.length;
 
-                if (playAgain === null) {
-                    alert("Thank you for playing! See you next time!");
-                    return;
-                }
+    if (totalMatched === totalCards) {
+        clearInterval(interval);
+        finalTime = formatTime(timer);
+        gameOver = true;
+    }
+};
 
-                playAgain = playAgain.trim().toLowerCase();
-
-                if (playAgain !== "yes" && playAgain !== "no") {
-                    alert(
-                        'Invalid response! Please type "yes" to play again or "no" to quit.',
-                    );
-                }
-            } while (playAgain !== "yes" && playAgain !== "no");
-
-            if (playAgain === "yes") {
-                loadGame();
-            } else if (playAgain === "no") {
-                window.location.href = "/";
-            }
-        }
-    };
-
+// 🔄 Reiniciar Jogo
+const restartGame = (): void => {
+    gameOver = false;
+    loadGame();
+};
+    // 🔄 Função para Resetar a Seleção de Cartas
     const resetSelection = (): void => {
         firstCard = null;
         secondCard = null;
     };
-
+    // 🚀 Inicializa o Jogo Quando a Página é Carregada
     onMount(() => {
         loadGame();
     });
@@ -229,7 +221,45 @@
 
     
 </script>
+git stash
+{#if gameOver}
+  <div id="game-over-modal">
+      <div class="modal-content">
+          <div class="celebration">
+              <span class="emoji bounce">🎉</span>
+              <span class="emoji bounce">🎊</span>
+              <span class="congrats-text">Congratulations!</span>
+              <span class="emoji bounce">🎊</span>
+              <span class="emoji bounce">🎉</span>
+          </div>
 
+          <div class="final-time">
+              <p>You finished the game in <strong>{finalTime}</strong>.</p>
+          </div>
+
+          <div class="modal-buttons">
+              <button class="play-again" on:click={restartGame}>
+                  🔄 Play Again
+              </button>
+              <button class="back-menu" on:click={() => (window.location.href = "/")}>
+                  🏠 Back to Menu
+              </button>
+          </div>
+
+          <div class="confetti-container">
+              <span class="confetti">🎉🎉</span>
+              <span class="confetti">🎉🎉</span>
+              <span class="confetti">🎊🎊🎊</span>
+              <span class="confetti">🎉🎉</span>
+              <span class="confetti">🎉🎉</span>
+              <span class="confetti">🎊🎊🎊</span>
+              <span class="confetti">🎉🎉</span>
+              <span class="confetti">🎉🎉</span>
+              <span class="confetti">🎊🎊🎊</span>
+          </div>
+      </div>
+  </div>
+{/if}
 <div id="play-logo-container">
     <header>
         <div id="logo-container">
